@@ -30,11 +30,15 @@ void MygetText(char *pBuf_h, int len_h, char *pBuf_t)
 		// 待考虑负数
 		
 		ch=(pBuf_h[zh]>>4)&15; 
-		ct=ch+((ch<10)?('0'-0):('A'-10));
+		//ct=ch+((ch<10)?('0'-0):('A'-10));
+		ct=(ch<10)?(ch+'0'-0):(ch+'A'-10);
+			// ？为了可读性的改变 
 		pBuf_t[zt++]=ct;
 		
 		ch=pBuf_h[zh]&15; 
-		ct=ch+((ch<10)?('0'-0):('A'-10));
+		//ct=ch+((ch<10)?('0'-0):('A'-10));
+		ct=(ch<10)?(ch+'0'-0):(ch+'A'-10);
+			// ？为了可读性的改变 
 		pBuf_t[zt++]=ct;
 		
 		pBuf_t[zt++]=' ';
@@ -42,6 +46,7 @@ void MygetText(char *pBuf_h, int len_h, char *pBuf_t)
 }
 
 void MyWriteHexText(char *FName_FI, char *FName_HT)
+	// file -> text
 {
 	FILE *fp_FI=NULL;
 	FILE *fp_HT=NULL;
@@ -60,7 +65,7 @@ void MyWriteHexText(char *FName_FI, char *FName_HT)
 		exit(0);
 	}
 	
-	int len=0, tl=0, tsize_f, tsize_t;
+	int len=0, tsize_f, tsize_t;
 	char pBuf_h[BUF_FI_SIZE]; 
 	char pBuf_t[BUF_HT_SIZE]; 
 	
