@@ -14,7 +14,7 @@
 #include "MyStrDeal.c"
 #include "MyGetName.c"
 #include "MyWriteHexText.c"
-//#include "MyWrite... .c"
+#include "MyWritetheFile.c"
 
 
 int MyCheckName(char *FName)
@@ -75,7 +75,7 @@ int MyDealaFile(int argc, char *argv[], int mod)
 
 
 
-#define TestMod 1
+#define TestMod 0
 	// 0 ：拖入文件模式 
 	// 1 : 输入文件名模式 
 	 
