@@ -28,8 +28,14 @@
 // 待支持处理多个
 int main(int argc, char *argv[])
 {
-	return MyDealaFile(argc, argv, TestMod);
+	//printf("%d\n", argc); 
+		// 拖入 1个文件 为2
+		// 拖入 3个文件 为4 
+	int z;
+	for(z=1; z<argc; z++)
+		MyDealaFile(argc, argv, z, TestMod);
 	
+	return 0;
 }
 
 
@@ -54,7 +60,7 @@ void MyWriteHexText(char *FName_FI, char *FName_HT);
 
 void MyWritetheFile(char *FName_HT, char *FName_FI);
 
-int MyDealaFile(int argc, char *argv[], int mod);
+int MyDealaFile(int argc, char *argv[], int m, int mod);
 */
 
 
