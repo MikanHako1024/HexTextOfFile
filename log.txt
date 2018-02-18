@@ -9,3 +9,9 @@
 改正了一些变量,参数名
 改正了一些函数名
 完成了 得到对应十六进制文本的文件文件名 MyGetFileName函数 
+
+2018.2.18
+修改了 MyWriteHexText函数 的一些细节
+完成了 写对应十六进制文本的文件 MyWritetheFile函数
+ 
+
