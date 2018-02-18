@@ -6,12 +6,26 @@
 2018.2.18
 提交完善过的代码：
 代码分在多个文件里
-改正了一些变量,参数名
-改正了一些函数名
+修正了一些变量名,参数名
+修正了一些函数名
 完成了 得到对应十六进制文本的文件文件名 MyGetFileName函数 
 
 2018.2.18
-修改了 MyWriteHexText函数 的一些细节
+修正了 MyWriteHexText函数 的一些细节
 完成了 写对应十六进制文本的文件 MyWritetheFile函数
- 
+
+2018.2.18
+修正了 main 的一些变量名
+发现bug：GetFileName出错 已Debug
+发现bug：WritetheFile结尾多出乱码 已Debug
+函数名GetFileName 修正为 GettheFileName
+修正 Mystrcmp注释
+增加 MyDealaFile.c
+增加 main 注释
+
+
+
+待 完成一些细节
+
+待 支持多个文件
 
