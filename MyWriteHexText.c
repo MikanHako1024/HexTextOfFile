@@ -30,15 +30,11 @@ void MygetText(char *pBuf_h, int len_h, char *pBuf_t)
 		// 待考虑负数
 		
 		ch=(pBuf_h[zh]>>4)&15; 
-		//ct=ch+((ch<10)?('0'-0):('A'-10));
 		ct=(ch<10)?(ch+'0'-0):(ch+'A'-10);
-			// ？为了可读性的改变 
 		pBuf_t[zt++]=ct;
 		
 		ch=pBuf_h[zh]&15; 
-		//ct=ch+((ch<10)?('0'-0):('A'-10));
 		ct=(ch<10)?(ch+'0'-0):(ch+'A'-10);
-			// ？为了可读性的改变 
 		pBuf_t[zt++]=ct;
 		
 		pBuf_t[zt++]=' ';

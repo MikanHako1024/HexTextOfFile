@@ -38,6 +38,7 @@ int MystrFind(char *str, char ch, int no)
 int Mystrcmp(char *str1, char *str2)
 	// 字符串比较
 	// 若两字符串相同 返回 1  否则 返回 -1 
+	// （ 一者先到 '\0' 时 结束判断 之前部分相同 则返回 1 ） 
 {
 	int z=0;
 	while( (str1[z]!='\0') && (str2[z]!='\0') )

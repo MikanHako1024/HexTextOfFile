@@ -1,13 +1,15 @@
 
 /*
-以十六进制读取文件并保存到新文件 
+以十六进制读取文件并保存到文本
+在文本修改十六进制数据并形成文件 
 */
+
 
 // HexText <--> File
 
+
 #include <stdio.h>
 #include <stdlib.h>
-
 
 #include "MySizeConfig.h"
 #include "MyNameAddConfig.h"
@@ -15,64 +17,7 @@
 #include "MyGetName.c"
 #include "MyWriteHexText.c"
 #include "MyWritetheFile.c"
-
-
-int MyCheckName(char *FName)
-// 根据 文件推展名 判断 需要的行为 
-// "\\Hex_xxx.txt"  需要还原 : 返回 1 
-// 			否则 	需要处理 : 返回 0
-{
-	int z1=-1, z2=-1;
-	
-	z1=MystrFind(FName, '\\', -1);
-	if( z1==-1 )z1=0;
-	z2=MystrFind(FName, '.', -1);
-	if( z2==-1 )return 0; // 不是需要还原的文件名 
-	
-	if( Mystrcmp( MyHT_front, FName+z1+1)==0 )return 0;
-	if( Mystrcmp( MyHT_rear, FName+z2)==0 )return 0;
-	return 1;
-}
-
-
-
-
-int MyDealaFile(int argc, char *argv[], int mod)
-{
-	char FName_r[NAME_MAX_SIZE]="D:\\2.txt";
-	char FName_w[NAME_MAX_SIZE]="D:\\3.txt";
-	if( mod==0 )
-	{
-		if(argc<=1)
-		{
-			printf("无文件!\n"); 
-			system("pause");
-			return 0;
-		}
-		Mystradd(FName_r, 0, argv[1], 0, -1);
-	}
-	
-	if( MyCheckName(FName_r)==0 ) // 需要 写 HexText ...
-	{
-		MyGetHexTextName(FName_r, FName_w);
-		printf("From File : %s\n", FName_r);
-		MyWriteHexText(FName_r, FName_w);
-		printf("To Text : %s\n", FName_w);
-		printf("完成!\n");
-	}
-	else // 需要 写 File ... // 未完成 
-	{
-		//MyGetReadName(FName_r, FName_w); // 不是 readname 
-		printf("From Text : %s\n", FName_r);
-		//MyReadHexFile(FName_r, FName_w);
-		printf("To File : %s\n", FName_w);
-		printf("完成!\n");	
-	}
-	
-	system("pause");
-	return 0;
-}
-
+#include "MyDealaFile.c"
 
 
 #define TestMod 0
@@ -86,4 +31,30 @@ int main(int argc, char *argv[])
 	return MyDealaFile(argc, argv, TestMod);
 	
 }
+
+
+/*
+#define NAME_MAX_SIZE (1024)
+#define BUF_FI_SIZE (64)
+#define BUF_HT_SIZE (192) // 3*BUF_FI_SIZE
+ 
+#define MyHexText_front "Hex_" 	// abc_ 
+#define MyHexText_rear ".txt"
+char MyHT_front[]=MyHexText_front;
+char MyHT_rear[]=MyHexText_rear;
+
+int MystrFind(char *str, char ch, int no);
+int Mystrcmp(char *str1, char *str2);
+int Mystradd(char *str, int top, char *addstr, int s, int e);
+
+void MyGetHexTextName(char *FName_FI, char *FName_HT);
+void MyGettheFileName(char *FName_HT, char *FName_FI);
+
+void MyWriteHexText(char *FName_FI, char *FName_HT);
+
+void MyWritetheFile(char *FName_HT, char *FName_FI);
+
+int MyDealaFile(int argc, char *argv[], int mod);
+*/
+
 
