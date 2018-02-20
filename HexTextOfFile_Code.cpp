@@ -21,7 +21,7 @@
 
 
 
-#define TestMod 1
+#define TestMod 0
 	// 0 ：拖入文件模式 
 	// 1 : 输入文件名模式 
 
