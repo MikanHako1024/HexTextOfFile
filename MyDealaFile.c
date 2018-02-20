@@ -5,7 +5,7 @@ MyDealaFile
 
 
 /*
-int MyDealaFile(int argc, char *argv[], int m, int mod);
+void MyDealaFile(char *FName);
 */
 
 
@@ -41,22 +41,11 @@ int MyCheckName(char *FName)
 	return 1;
 }
 
-//int MyDealaFile(int argc, char *argv[], int mod)
-int MyDealaFile(int argc, char *argv[], int m, int mod)
+void MyDealaFile(char *FName)
 {
-	//char FName_r[NAME_MAX_SIZE]="D:\\2.txt";
-	char FName_r[NAME_MAX_SIZE]="D:\\Hex_2.txt.txt"; 
+	char FName_r[NAME_MAX_SIZE];
 	char FName_w[NAME_MAX_SIZE];
-	if( mod==0 )
-	{
-		if(argc<=1)
-		{
-			printf("无文件!\n"); 
-			system("pause");
-			return 0;
-		}
-		Mystradd(FName_r, 0, argv[m], 0, -1);
-	}
+	Mystradd(FName_r, 0, FName, 0, -1);
 	
 	if( MyCheckName(FName_r)==0 ) // 需要 写 HexText 
 	{
@@ -74,17 +63,11 @@ int MyDealaFile(int argc, char *argv[], int m, int mod)
 		printf("To File : %s\n", FName_w);
 		printf("完成!\n");	
 	}
-	
-	//system("pause");
-	if(mod==1 || m+1==argc)system("pause");
-		// 拖入 多个文件 时  最后一次才 system("pause") 
-	
-	return 0;
 }
 
 
 
-int MyDealaFile(int argc, char *argv[], int m, int mod);
+void MyDealaFile(char *FName);
 
 #endif
 

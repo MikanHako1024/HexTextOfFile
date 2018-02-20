@@ -20,21 +20,38 @@
 #include "MyDealaFile.c"
 
 
-#define TestMod 0
+
+#define TestMod 1
 	// 0 ：拖入文件模式 
 	// 1 : 输入文件名模式 
-	 
 
-// 待支持处理多个
+//#define InputFName "D:\\2.txt" 
+#define InputFName "D:\\Hex_2.txt.txt"
+char FName[]=InputFName;
+
+
 int main(int argc, char *argv[])
 {
-	//printf("%d\n", argc); 
-		// 拖入 1个文件 为2
-		// 拖入 3个文件 为4 
 	int z;
-	for(z=1; z<argc; z++)
-		MyDealaFile(argc, argv, z, TestMod);
 	
+	if( TestMod==0 )
+	{
+		if(argc<=1)
+		{
+			printf("无文件!\n"); 
+			system("pause");
+			return 0;
+		}
+		
+		for(z=1; z<argc; z++)
+			MyDealaFile(argv[z]);
+	}
+	else 
+	{
+		MyDealaFile(FName);
+	}
+	
+	system("pause");
 	return 0;
 }
 
