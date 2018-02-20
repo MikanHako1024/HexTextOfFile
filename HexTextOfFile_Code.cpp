@@ -61,10 +61,12 @@ int main(int argc, char *argv[])
 #define BUF_FI_SIZE (64)
 #define BUF_HT_SIZE (192) // 3*BUF_FI_SIZE
  
-#define MyHexText_front "Hex_" 	// abc_ 
+#define MyHexText_front "Hex_"
 #define MyHexText_rear ".txt"
+#define MytheFile_front "new_" 
 char MyHT_front[]=MyHexText_front;
 char MyHT_rear[]=MyHexText_rear;
+char MyFI_front[]=MytheFile_front;
 
 int MystrFind(char *str, char ch, int no);
 int Mystrcmp(char *str1, char *str2);

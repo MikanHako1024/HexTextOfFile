@@ -35,6 +35,7 @@ void MyGetHexTextName(char *FName_FI, char *FName_HT)
 }
 
 void MyGettheFileName(char *FName_HT, char *FName_FI)
+	// theFile 是 newFile 之意 
 {
 	int z1=-1, z2=-1, zh=0, zf=0;
 	
@@ -43,6 +44,7 @@ void MyGettheFileName(char *FName_HT, char *FName_FI)
 	 
 	Mystradd(FName_FI, 0, FName_HT, 0, -1); // add path 
 	zf=z1+1;
+	zf=Mystradd(FName_FI, zf, MyFI_front, 0, -1); // add 前缀 
 	z1=z1+MystrFind(FName_HT+z1, '_', 1); 
 	zf=Mystradd(FName_FI, zf, FName_HT, z1+1, z2-1); // add 文件名 
 }

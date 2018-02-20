@@ -31,6 +31,8 @@
 修正了 main 和 MyDealaFile 的作用 
 MyDealaFile 不进行判断等操作而是直接处理 
 
+2018.2.20
+WritetheFile会创建新的文件，而不会覆盖原文件
 
 
 待 完成一些细节
